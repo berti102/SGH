@@ -7,6 +7,9 @@
 //- zapis i odczyt transakcji z pliku
 //- podsumowanie transakcji
 
+//modyfikacje podczas zaliczenia
+// pozycja 7,8 - wyświetl tylko salda
+// przy przenoszeniu między kontami wyświetl komunikat o braku środków 
 
 
 import java.io.*;
@@ -332,5 +335,4 @@ public class Budzet_v2 {
     }
 }
  
-// pozycja 7 - wyświetl dwa salda
-// brak możliwości przekroczenia salda
+
