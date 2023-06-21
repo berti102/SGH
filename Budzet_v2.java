@@ -1,18 +1,12 @@
-//Aplikacja do zarz¹dzania bud¿etem.
+//Aplikacja do zarzÄ…dzania budÅ¼etem.
 
 //Funkcje programu
-//- prowadzenie dwóch kont - Rozliczenioweiczeniowego i inwestycyjnego
-//- dodawanie i wyœwietlanie transakcji
-//- przenoszenie œrodków miêdzy kontami
+//- prowadzenie dwÃ³ch kont - Rozliczenioweiczeniowego i inwestycyjnego
+//- dodawanie i wyÅ›wietlanie transakcji
+//- przenoszenie Å›rodkÃ³w miÄ™dzy kontami
 //- zapis i odczyt transakcji z pliku
 //- podsumowanie transakcji
-//
-// 1. pobieranie, wyœwietlanie tekstu
-// 2. zmienne (int, float, boolean, tablicowe)
-// 3. operacje logiczne, arytmetyczne, przypisania, relacyjne
-// 4. warunki, pêtle
-// 5. tablice, tablice dynamiczne
-// 6. obiektowoœæ, pojêcie klasy
+
 
 
 import java.io.*;
@@ -49,18 +43,18 @@ public class Budzet_v2 {
         int menu = 1;
         
         while (menu>0) {
-        System.out.println("Program do zarz¹dzania bud¿etem osobistym");
+        System.out.println("Program do zarzÄ…dzania budÅ¼etem osobistym");
         System.out.println();
-        System.out.println("Wybierz czynnoœæ");
+        System.out.println("Wybierz czynnoÅ›Ä‡");
         System.out.println();
-        System.out.println("1. WprowadŸ wp³ywy lub wydatki do konta Rozliczeniowego");
-        System.out.println("2. Przenieœ œrodki miêdzy kontami");
-        System.out.println("3. Wyœwietl listê transakcji");
-        System.out.println("4. Wyœwietl podsumowanie konta Rozliczeniowego");
-        System.out.println("5. Wyœwietl podsumowanie konta Oszczednosciowego");
+        System.out.println("1. WprowadÅº wpÅ‚ywy lub wydatki do konta Rozliczeniowego");
+        System.out.println("2. PrzenieÅ› Å›rodki miÄ™dzy kontami");
+        System.out.println("3. WyÅ›wietl listÄ™ transakcji");
+        System.out.println("4. WyÅ›wietl podsumowanie konta Rozliczeniowego");
+        System.out.println("5. WyÅ›wietl podsumowanie konta Oszczednosciowego");
         System.out.println("6. Zapisz do pliku");
         System.out.println("7. Saldo rozliczeniowe");
-        System.out.println("8. Saldo oszczednoœciowe");
+        System.out.println("8. Saldo oszczednoÅ›ciowe");
 
         System.out.println("0. Zamknij program");
         
@@ -89,7 +83,7 @@ public class Budzet_v2 {
                 
             case 6:
                 zapiszDoPliku();
-                System.out.println("Dane zosta³y zapisane");
+                System.out.println("Dane zostaÅ‚y zapisane");
                 break;      
             
             case 7: 
@@ -111,7 +105,7 @@ public class Budzet_v2 {
         String typkonta = "Rozliczeniowe";
         
         while (CzyKolejny.equalsIgnoreCase ("T")) {
-            System.out.println("WprowadŸ datê transakcji (yyyy-mm-dd): ");
+            System.out.println("WprowadÅº datÄ™ transakcji (yyyy-mm-dd): ");
             String dataString = podaj.nextLine();
             
             try {
@@ -119,14 +113,14 @@ public class Budzet_v2 {
                 Date data = dateFormat.parse(dataString);
                 dataList.add(data);
             } catch (ParseException e) {
-                System.out.println("Nieprawid³owy format daty");
+                System.out.println("NieprawidÅ‚owy format daty");
             }
             
-            System.out.println("WprowadŸ nazwê transakcji: ");
+            System.out.println("WprowadÅº nazwÄ™ transakcji: ");
             String nazwa = podaj.nextLine();
             nazwaList.add(nazwa);
             
-            System.out.println("Podaj kwotê: ");
+            System.out.println("Podaj kwotÄ™: ");
             float kwota = podaj.nextFloat();
             kwotaList.add(kwota);
             
@@ -134,7 +128,7 @@ public class Budzet_v2 {
             
             podaj.nextLine();
             System.out.println();
-            System.out.print("Czy dodaæ kolejny (T/N)? ");
+            System.out.print("Czy dodaÄ‡ kolejny (T/N)? ");
             CzyKolejny = podaj.nextLine();
             
             if (CzyKolejny.equalsIgnoreCase ("N")) {
@@ -147,10 +141,10 @@ public class Budzet_v2 {
     
     private void przeniesSrodki (Scanner podaj) {
         podaj.nextLine();
-        System.out.println("Wybierz czynnoœæ");
+        System.out.println("Wybierz czynnoÅ›Ä‡");
         System.out.println();
-        System.out.println("1. Przenieœ œrodki z Rozliczeniowego na Oszczednosciowe");
-        System.out.println("2. Przenieœ œrodki z Oszczednosciowego na Rozliczeniowe");
+        System.out.println("1. PrzenieÅ› Å›rodki z Rozliczeniowego na Oszczednosciowe");
+        System.out.println("2. PrzenieÅ› Å›rodki z Oszczednosciowego na Rozliczeniowe");
         
         int menu2 = podaj.nextInt();
         
@@ -171,7 +165,7 @@ public class Budzet_v2 {
     
     private void przeniesSrodkiMiedzyKontami(String kontoZ, String kontoNa) {
         Scanner podaj = new Scanner(System.in);
-        System.out.println("Jak¹ kwotê przenieœæ na konto " + kontoNa + "?");
+        System.out.println("JakÄ… kwotÄ™ przenieÅ›Ä‡ na konto " + kontoNa + "?");
         Float kwota = podaj.nextFloat();
 
         float suma = 0.00f;
@@ -182,14 +176,14 @@ public class Budzet_v2 {
         }
                 
         if (kwota > suma) {
-        System.out.println("Niewystarczaj¹ce œrodki");
+        System.out.println("NiewystarczajÄ…ce Å›rodki");
         }
         
             
         if (kwota < suma) {    
           
                 
-        String nazwa = "Przelew Wewnêtrzny";
+        String nazwa = "Przelew WewnÄ™trzny";
         Date today = Calendar.getInstance().getTime();
 
         dataList.add(today);
@@ -209,7 +203,7 @@ public class Budzet_v2 {
     }
     
     private void wyswietlListeTransakcji() {
-        System.out.println("Wyœwietlanie");
+        System.out.println("WyÅ›wietlanie");
         System.out.println();
         System.out.println("****************************************************************************************");
         System.out.printf("* %-30s * %-20s * %-10s * %-15s *", "Data", "Nazwa", "Kwota", "Konto");
@@ -243,7 +237,7 @@ public class Budzet_v2 {
             }
         }
 
-        System.out.println("Wyœwietlanie transakcji dla typu " + typkonta);
+        System.out.println("WyÅ›wietlanie transakcji dla typu " + typkonta);
         System.out.println();
         System.out.println("****************************************************************************************");
         System.out.printf("* %-30s * %-20s * %-10s * %-15s *", "Data", "Nazwa", "Kwota", "Konto");
@@ -338,5 +332,5 @@ public class Budzet_v2 {
     }
 }
  
-// pozycja 7 - wyœwietl dwa salda
-// brak mo¿liwoœci przekroczenia salda
+// pozycja 7 - wyÅ›wietl dwa salda
+// brak moÅ¼liwoÅ›ci przekroczenia salda
